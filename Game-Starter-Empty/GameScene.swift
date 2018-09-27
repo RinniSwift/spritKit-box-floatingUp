@@ -10,17 +10,14 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-  
-  
-  
+    
+    var countingPoints = 0
+    let counts = SKLabelNode(fontNamed: "Helvetica")
+    
     override func didMove(to view: SKView) {
-        // Called when the scene has been displayed
-//        let action = SKAction.run {
-//            self.createSquare(width: 40, height: 40, divideWidth: 2, divideHeight: 2)
-//            self.createSquare(width: 40, height: 40, divideWidth: 4, divideHeight: 2)
-//            self.createSquare(width: 40, height: 40, divideWidth: 1.355, divideHeight: 2)
-//        }
-//        self.run(action)
+        // called when the scene has been displayed
+        
+        countScore()
         
         let action1 = SKAction.run {
             self.createSquare()
@@ -40,8 +37,20 @@ class GameScene: SKScene {
             let node = atPoint(location)
             if node.name == "red squares"{
                 node.removeFromParent()
+                countingPoints += 1
+                counts.text = "your score is: \(countingPoints)"
+                
             }
         }
+    }
+    
+    
+    
+    func countScore() {
+        counts.position = CGPoint(x: (view?.bounds.width)! / 2, y: (view?.bounds.height)! - 30)
+        counts.fontSize = 25
+        counts.text = "your score is: \(countingPoints)"
+        addChild(counts)
     }
     
     
@@ -49,22 +58,7 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // * part of the rendering loop
         // Called before each frame is rendered
-
     }
-    
-//    func createSquare(width: Int, height: Int, divideWidth: CGFloat, divideHeight: CGFloat) {
-//        let size = CGSize(width: width, height: height)
-//        let square = SKSpriteNode(texture: nil, color: .cyan, size: size)
-//
-//
-//        if let view = self.view {
-//            let width = square.position.x = view.bounds.width / divideWidth
-//            let height = square.position.y = view.bounds.height / divideHeight
-//        }
-//
-//        // > was actaully square.position.x = self.view?.bounds.width / 2
-//        addChild(square)
-//    }
     
     func createSquare() {
         let squareSize = CGSize(width: 50, height: 50)
