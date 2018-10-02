@@ -79,3 +79,7 @@ class GameScene: SKScene {
     
     
 }
+
+class SquareFloatingUp: SKScene {
+    
+}
