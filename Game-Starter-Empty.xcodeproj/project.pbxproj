@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A414EF182163E0D000575AE0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414EF172163E0D000575AE0 /* Colors.swift */; };
+		A414EF1A2163FFFF00575AE0 /* CreateSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414EF192163FFFF00575AE0 /* CreateSquare.swift */; };
 		D8A7EBED214AA9C30022E043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7EBEC214AA9C30022E043 /* AppDelegate.swift */; };
 		D8A7EBF3214AA9C30022E043 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7EBF2214AA9C30022E043 /* GameScene.swift */; };
 		D8A7EBF5214AA9C30022E043 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7EBF4214AA9C30022E043 /* GameViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A414EF172163E0D000575AE0 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A414EF192163FFFF00575AE0 /* CreateSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSquare.swift; sourceTree = "<group>"; };
 		D8A7EBE9214AA9C30022E043 /* Game-Starter-Empty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game-Starter-Empty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A7EBEC214AA9C30022E043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8A7EBF2214AA9C30022E043 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				D8A7EBEC214AA9C30022E043 /* AppDelegate.swift */,
 				D8A7EBF2214AA9C30022E043 /* GameScene.swift */,
 				D8A7EBF4214AA9C30022E043 /* GameViewController.swift */,
+				A414EF192163FFFF00575AE0 /* CreateSquare.swift */,
+				A414EF172163E0D000575AE0 /* Colors.swift */,
 				D8A7EBF6214AA9C30022E043 /* Main.storyboard */,
 				D8A7EBF9214AA9C40022E043 /* Assets.xcassets */,
 				D8A7EBFB214AA9C40022E043 /* LaunchScreen.storyboard */,
@@ -139,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8A7EBF3214AA9C30022E043 /* GameScene.swift in Sources */,
+				A414EF182163E0D000575AE0 /* Colors.swift in Sources */,
+				A414EF1A2163FFFF00575AE0 /* CreateSquare.swift in Sources */,
 				D8A7EBF5214AA9C30022E043 /* GameViewController.swift in Sources */,
 				D8A7EBED214AA9C30022E043 /* AppDelegate.swift in Sources */,
 			);

@@ -25,6 +25,8 @@ class GameScene: SKScene {
         
         let wait = SKAction.wait(forDuration: 1)
         
+        
+        // generate squares
         let sequence = SKAction.sequence([action1, wait])
         
         let repeatingSquaresCreated = SKAction.repeatForever(sequence)
@@ -35,13 +37,18 @@ class GameScene: SKScene {
         if let touches = touches.first {
             let location = touches.location(in: self)
             let node = atPoint(location)
-            if node.name == "red squares"{
+            if node.name == "pink squares"{
                 node.removeFromParent()
-                countingPoints += 1
-                counts.text = "your score is: \(countingPoints)"
+                updatePoints(with: +1)
+                
                 
             }
         }
+    }
+    
+    private func updatePoints(with newValue: Int) {
+        countingPoints += newValue
+        counts.text = "your score is: \(countingPoints)"
     }
     
     
@@ -60,26 +67,35 @@ class GameScene: SKScene {
         // Called before each frame is rendered
     }
     
+    
     func createSquare() {
         let squareSize = CGSize(width: 50, height: 50)
-        let square = SKSpriteNode(texture: nil, color: .red, size: squareSize)
+        
+        
+        // sqaure object on the screen
+        let square = CreateSquare(name: "pink squares", size: squareSize, color: Colors.pink)
         square.position.x = CGFloat(arc4random_uniform(UInt32((view?.bounds.width)!)))
         square.position.y = 0
         
-        let moveUpToTopScreen = SKAction.moveTo(y: (view?.bounds.height)!, duration: 2)
-//        let wait = SKAction.wait(forDuration: 1)
-        let deleteNode = SKAction.removeFromParent()
+        // move boxes up to top and dissapear from screen.
+        let moveUpToTop = SKAction.moveTo(y: (view?.bounds.height)!, duration: 2)
+        let removeNode = SKAction.removeFromParent()
+        // if it removes, minus the points
+        let minusPoints = SKAction.run {
+            self.updatePoints(with: -1)
+//            self.countingPoints -= 1
+//            self.updatePoints(with: self.countingPoints)
+        }
+        // sequence
+        let seq = SKAction.sequence([moveUpToTop, removeNode, minusPoints])
         
-        let seq = SKAction.sequence([moveUpToTopScreen, deleteNode])
+        // add the square to the screen
         addChild(square)
+        // run the sequence on the screen
         square.run(seq)
-        
-        square.name = "red squares"
+        // create a name to use it over functions
+        square.name = "pink squares"
     }
     
-    
-}
-
-class SquareFloatingUp: SKScene {
     
 }
